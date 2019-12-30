@@ -1,18 +1,18 @@
-import { Component, OnInit } from "@angular/core";
-import { AuthenticationService } from "../services/authentication.service";
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: "app-tab-home",
-  templateUrl: "./tab-home.page.html",
-  styleUrls: ["./tab-home.page.scss"]
+  selector: 'app-tab-home',
+  templateUrl: './tab-home.page.html',
+  styleUrls: ['./tab-home.page.scss']
 })
 export class TabHomePage implements OnInit {
-  constructor(private router: Router, private auth: AuthenticationService) {}
+  constructor(private router: Router, private auth: AuthenticationService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   gotoDetail() {
-    this.router.navigateByUrl("/members/tabs/tabHome/homeDetail");
+    this.router.navigateByUrl('/members/tabs/tabHome/homeDetail');
   }
 }

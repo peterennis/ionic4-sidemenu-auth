@@ -1,53 +1,53 @@
-import { NgModule } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { FormsModule } from "@angular/forms";
-import { Routes, RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Routes, RouterModule } from '@angular/router';
 
-import { IonicModule } from "@ionic/angular";
+import { IonicModule } from '@ionic/angular';
 
-import { TabsPage } from "./tabs.page";
+import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
-    path: "tabs",
+    path: 'tabs',
     component: TabsPage,
     children: [
       {
-        path: "",
-        redirectTo: "tabs/(tabHome:tabHome)",
-        pathMatch: "full"
+        path: '',
+        redirectTo: 'tabs/(tabHome:tabHome)',
+        pathMatch: 'full'
       },
       {
-        path: "tabHome",
+        path: 'tabHome',
         children: [
           {
-            path: "",
-            loadChildren: "../tab-home/tab-home.module#TabHomePageModule"
+            path: '',
+            loadChildren: '../tab-home/tab-home.module#TabHomePageModule'
           }
         ]
       },
       {
-        path: "tabHome/homeDetail",
-        loadChildren: "../home-detail/home-detail.module#HomeDetailPageModule"
+        path: 'tabHome/homeDetail',
+        loadChildren: '../home-detail/home-detail.module#HomeDetailPageModule'
       },
       {
-        path: "tabSettings",
+        path: 'tabSettings',
         children: [
           {
-            path: "",
+            path: '',
             loadChildren:
-              "../tab-settings/tab-settings.module#TabSettingsPageModule"
+              '../tab-settings/tab-settings.module#TabSettingsPageModule'
           }
         ]
       }
     ]
   },
   {
-    path: "",
-    redirectTo: "tabs/tabHome",
-    pathMatch: "full"
+    path: '',
+    redirectTo: 'tabs/tabHome',
+    pathMatch: 'full'
   },
-  { path: "about", loadChildren: "../about/about.module#AboutPageModule" }
+  { path: 'about', loadChildren: '../about/about.module#AboutPageModule' }
 ];
 
 @NgModule({
@@ -60,4 +60,4 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: [TabsPage]
 })
-export class TabsPageModule {}
+export class TabsPageModule { }
